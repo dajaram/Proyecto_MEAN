@@ -1,0 +1,42 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ],
+    "no-inline-styles": "off",
+    "axe/name-role-value": [
+      "default",
+      {
+        "button-name": "off",
+        "link-name": "off"
+      }
+    ],
+    "button-type": "off",
+    "axe/forms": [
+      "default",
+      {
+        "select-name": "off",
+        "label": "off"
+      }
+    ],
+    "axe/aria": [
+      "default",
+      {
+        "aria-required-children": "off"
+      }
+    ],
+    "axe/structure": [
+      "default",
+      {
+        "listitem": "off"
+      }
+    ],
+    "meta-viewport": "off"
+  }
+}

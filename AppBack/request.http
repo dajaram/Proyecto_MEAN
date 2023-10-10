@@ -1,0 +1,138 @@
+####
+POST http://localhost:9000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Juan",
+    "lastname": "Mendez",
+    "email": "juan.mz1@gmail.com"
+}
+
+#####
+POST http://localhost:9000/api/usersMany HTTP/1.1
+Content-Type: application/json
+
+[
+    {
+    "name": "Maria",
+    "lastname": "Mendez",
+    "email": "maria90@gmail.com",
+    "password": "PerlaAmarilla23" 
+},
+    {
+        "name":"Pepita",
+        "lastname": "Lozano",
+        "email": "pepita0@gmail.com",
+        "password": "Perla2"
+    },
+    {
+        "name":"Juan",
+        "lastname": "Aries",
+        "email": "maria90@gmail.com",
+        "password": "Pmaria23"
+    }
+]
+
+####
+
+GET http://localhost:9000/api/users HTTP/1.1
+
+####
+GET http://localhost:9000/api/users/64dfee41f9c727d730182cdf HTTP/1.1
+
+####
+
+PUT http://localhost:9000/api/users/64dfee41f9c727d730182cdf HTTP/1.1
+Content-Type: application/json
+
+    {
+        "name":"Francisco",
+        "lastname": "Arbol",
+    }
+
+
+######
+DELETE http://localhost:9000/api/users/64dfee41f9c727d730182cdf HTTP/1.1
+
+###
+POST http://localhost:9000/api/register HTTP/1.1
+Content-Type: application/json
+
+    {
+        "name":"Juan",
+        "lastname": "Cortez",
+        "email": "juan9601@gmail.com",
+        "password": "Pjuan23"
+    }
+###
+POST http://localhost:9000/api/login HTTP/1.1
+Content-Type: application/json
+
+    {
+        "email": "maria9601@gmail.com",
+        "password": "Pmaria23"
+    }
+
+
+
+//PRODUCTOS
+
+//GET TODOS LOS PRODUCTOS
+#####
+GET http://localhost:9000/api/products HTTP/1.1
+autorizado: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTQ2NTg5MTR9.1vJ7Oq1tilmP-Z0aqxqs_MtVhl3zZFXd3YccUV6UPZY
+
+
+
+
+//POST UNO SOLO
+
+#####
+
+POST http://localhost:9000/api/products HTTP/1.1
+Content-Type: application/json
+
+    {
+        "product": "pantalon",
+        "size": "L",
+        "stock": "Available",
+
+    }
+
+
+
+//POST  VARIOS 
+#####
+POST http://localhost:9000/api/productsMany HTTP/1.1
+Content-Type: application/json
+
+[
+    {
+        "product": "pantalon",
+        "size": "M",
+        "stock": "Available"
+    },
+    {
+        "product": "pantalon",
+        "size": "S",
+        "stock": "Available"
+    },
+    {
+        "product": "pantalon",
+        "size": "XS",
+        "stock": "Available"
+    },
+  
+]
+
+
+###
+PUT http://localhost:9000/api/products64dfee41f9c727d730182cdf HTTP/1.1
+Content-Type: application/json
+
+    {
+        "product": "pantalon",
+        "size": "XSS",
+        "stock": "Available",
+    }
+
