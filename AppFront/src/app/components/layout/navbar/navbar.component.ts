@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  footer(){
+    document.getElementById('footer1')?.scrollIntoView({behavior:'smooth'})
+  }
 }

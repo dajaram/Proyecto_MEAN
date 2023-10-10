@@ -5,7 +5,7 @@ export const loginGuard = () => {
 
     const router = inject(Router)
 
-    if(localStorage.getItem('token_produc')){
+    if(localStorage.getItem('user_token')){
         return true;
     }else{
         router.navigate(['/login'])

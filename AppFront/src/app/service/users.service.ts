@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 
@@ -11,9 +11,15 @@ export class UsersService {
   baseUrl = 'http://localhost:9000/api/users';
   userUrl = 'http://localhost:9000/api';
 
+  headers() {
+    return {
+      headers: new HttpHeaders({ 'autorizado': localStorage.getItem('user_token')! })
+    }
+  }
+
   getAll() {
     return firstValueFrom(
-      this.httpClient.get<any[]>(this.baseUrl)
+      this.httpClient.get<any[]>(this.baseUrl,this.headers())
     );
   }
 
