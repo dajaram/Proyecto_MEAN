@@ -1,0 +1,30 @@
+<head>
+    <link rel="stylesheet" href="./register.component.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<section>
+    <div class="content">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="field">
+                <input type="name" required class="form-control" formControlName="name">
+                <span class="fas fa-user"></span>
+                <label>Name</label>
+            </div>
+            <div class="field">
+                <input type="text" required class="form-control" formControlName="email">
+                <span class="fas fa-user"></span>
+                <label>Email</label>
+            </div>
+            <div class="field">
+                <input type="password" required class="form-control" formControlName="password">
+                <span class="fas fa-lock"></span>
+                <label>Password</label>
+            </div>
+            <button type="submit" value="Ingresar">Sign in</button>
+            <div class="log-up">
+                You already have an account?
+                <a href="./login">Log In now</a>
+            </div>
+        </form>
+    </div>
+</section>

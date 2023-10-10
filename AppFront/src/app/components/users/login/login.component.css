@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  /* user-select: none; */
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,body{
+  height: 100%;
+}
+section{
+  display: grid;
+  place-items: center;
+  background: black;
+  text-align: center;
+}
+.content{
+  width: 330px;
+  padding: 40px 30px;
+  background: black;
+  margin: 5%;
+  border-radius: 10px;
+  box-shadow: -3px -3px 7px #e8ceb9,
+               2px 2px 5px #e8ceb9;
+}
+.field{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.field:nth-child(2){
+  margin-top: 20px;
+}
+.field input{
+  height: 100%;
+  width: 100%;
+  padding-left: 45px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  background: #e8ceb9;
+  color: black;
+  border-radius: 25px;
+}
+.field input:focus{
+  box-shadow: inset 1px 1px 2px #e8ceb9,
+              inset -1px -1px 2px #e8ceb9;
+}
+.field span{
+  position: absolute;
+  color: black;
+  width: 50px;
+  line-height: 50px;
+}
+.field label{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 45px;
+  pointer-events: none;
+  color: black;
+}
+.field input:valid ~ label{
+  opacity: 0;
+}
+.forgot-pass{
+  text-align: left;
+  margin: 10px 0 10px 5px;
+}
+.forgot-pass a{
+  font-size: 16px;
+  color: #ff4b0f;
+  text-decoration: none;
+}
+.forgot-pass:hover a{
+  text-decoration: underline;
+}
+button{
+  margin: 15px 0;
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  font-weight: 600;
+  background: #e8ceb9;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: black;
+  box-shadow: 2px 2px 5px black,
+             -5px -5px 10px black;
+}
+button:focus{
+  color: #ff4b0f;
+  box-shadow: inset 2px 2px 5px #e8ceb9,
+             inset -5px -5px 10px #e8ceb9;
+}
+.sign-up{
+  margin: 10px 0;
+  color: #e8ceb9;
+  font-size: 16px;
+}
+.sign-up a{
+  color: #ff4b0f;
+  text-decoration: none;
+}
+.sign-up a:hover{
+  text-decoration: underline;
+}

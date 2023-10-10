@@ -1,0 +1,44 @@
+.container-fluid{
+    font-family: lostar;
+    font-size: larger;
+    background-color: black;
+    margin: 0%;
+}
+
+.navbar-expand-lg {
+    background-color: black;
+    color: black;
+    margin: 0%;
+    text-align: center;
+}
+.navbar-brand{
+    font-size: xx-large;
+    color: #ff4b0f;
+    font-family: lostar;
+    margin-left: 30vw;
+
+}
+
+.nav-link.active{
+    color: #e8ceb9;
+}
+
+nav menu{
+    background-color: black
+
+}
+
+.dropdown{
+    color: #e8ceb9;
+}
+
+.nav-link.active.logi {
+    color: #ff4b0f;
+    margin-right: 10px;
+}
+
+.icon-cart {
+    width: 40px;
+    height: 40px;
+    color: white;
+}
