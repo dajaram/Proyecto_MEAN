@@ -75,9 +75,9 @@ Content-Type: application/json
 
 
 
-//PRODUCTOS
 
-//GET TODOS LOS PRODUCTOS
+
+
 #####
 GET http://localhost:9000/api/products HTTP/1.1
 autorizado: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTQ2NTg5MTR9.1vJ7Oq1tilmP-Z0aqxqs_MtVhl3zZFXd3YccUV6UPZY
@@ -85,42 +85,97 @@ autorizado: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTQ2NTg5MTR9.1vJ7Oq
 
 
 
-//POST UNO SOLO
+
 
 #####
 
 POST http://localhost:9000/api/products HTTP/1.1
 Content-Type: application/json
 
-    {
-        "product": "pantalon",
-        "size": "L",
-        "stock": "Available",
+{
+    "product": "Hoodie",
+    "color": "Grey",
+    "price": 300,
+    "size": [
+        {
+            "size": "S",
+            "stock": 2,
+        },
+        {
+            "size": "M",
+            "stock": 5,
+        },
+        {
+            "size": "L",
+            "stock": 1,
+        },
+    ]     
+}
 
-    }
 
 
 
-//POST  VARIOS 
 #####
 POST http://localhost:9000/api/productsMany HTTP/1.1
 Content-Type: application/json
 
 [
     {
-        "product": "pantalon",
-        "size": "M",
-        "stock": "Available"
+        "product": "Hoodie",
+        "color": "Black",
+        "price": 30.0,
+        "size": [
+            {
+                "size": "S",
+                "stock": 3,
+            },
+            {
+                "size": "M",
+                "stock": 6,
+            },
+            {
+                "size": "L",
+                "stock": 1,
+            },
+        ]
     },
     {
-        "product": "pantalon",
-        "size": "S",
-        "stock": "Available"
+        "product": "Hoodie",
+        "color": "Baby Blue",
+        "price": 30.0,
+        "size": [
+            {
+                "size": "S",
+                "stock": 3,
+            },
+            {
+                "size": "M",
+                "stock": 6,
+            },
+            {
+                "size": "L",
+                "stock": 1,
+            },
+        ]
     },
     {
-        "product": "pantalon",
-        "size": "XS",
-        "stock": "Available"
+        "product": "Hoodie",
+        "color": "Red",
+        "price": 30.0,
+        "size": [
+            {
+                "size": "S",
+                "stock": 3,
+            },
+            {
+                "size": "M",
+                "stock": 6,
+            },
+            {
+                "size": "L",
+                "stock": 1,
+            },
+        ]
     },
   
 ]
@@ -130,9 +185,24 @@ Content-Type: application/json
 PUT http://localhost:9000/api/products64dfee41f9c727d730182cdf HTTP/1.1
 Content-Type: application/json
 
-    {
-        "product": "pantalon",
-        "size": "XSS",
-        "stock": "Available",
-    }
+   {
+        "product": "Hoodie",
+        "color": "Grey",
+        "price": 30.0,
+        "size": [
+            {
+                "size": "S",
+                "stock": 2,
+            },
+            {
+                "size": "M",
+                "stock": 5,
+            },
+            {
+                "size": "L",
+                "stock": 1,
+            },
+        ]
+        
 
+    }

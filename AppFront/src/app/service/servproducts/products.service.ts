@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { firstValueFrom } from 'rxjs';
+import { Observable, firstValueFrom, lastValueFrom } from 'rxjs';
+import { Product } from 'src/app/interfaces/product.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -8,26 +9,18 @@ import { firstValueFrom } from 'rxjs';
 export class ProductService {
 
   httpClient = inject(HttpClient);
-  baseUrl = 'http://localhost:9000/api/users';
+  baseUrl = 'http://localhost:9000/api/products';
   userUrl = 'http://localhost:9000/api';
 
-  getAll() {
-    return firstValueFrom(
-      this.httpClient.get<any[]>(this.baseUrl)
-    );
+  getAllProducts(): Observable<Product[]> {
+    const response = this.httpClient.get<Product[]>('${this.baseUrl}products')
+    console.log  
+    return response
   }
 
-  register(formValue:any){
-    return firstValueFrom(
-      this.httpClient.post<any>(`${this.userUrl}/register`, formValue)
-    )
-  }
-
-  login(formValue:any){
-    return firstValueFrom(
-      this.httpClient.post<any>(`${this.userUrl}/login`, formValue)
-    )
-  }
+  // getPromise(): Promise<any[]> {
+  // return lastValueFrom(this.httpClient.get<any[]>('${this.baseUrl}products'))
+ // }
 
   // constructor() { }
 }

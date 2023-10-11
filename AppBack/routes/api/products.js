@@ -47,13 +47,13 @@ router.get('/products/:id', (require, response) => {
 
 // Actualizar por id
 
-router.put('/products/:id',(require, response) =>{
-    const {id} = require.params;
-    const {product, size, stock} = require.body;
-    productsSchema.updateOne({_id: id}, {$set:{product, size, stock}})
-    .then((data) => response.json(data))
-    .catch((error)=> response.json({ message: error }))
-});
+//router.put('/products/:id',(require, response) =>{
+//    const {id} = require.params;
+//    const {product, size, stock} = require.body;
+//    productsSchema.updateOne({_id: id}, {$set:{product, color, price, size}})
+//    .then((data) => response.json(data))
+//    .catch((error)=> response.json({ message: error }))
+//});
 
 
 //Eliminar usuario
