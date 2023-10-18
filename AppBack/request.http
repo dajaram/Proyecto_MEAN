@@ -79,10 +79,18 @@ Content-Type: application/json
 
 
 #####
+POST http://localhost:9000/api/products HTTP/1.1
+autorizado: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTQ2NTg5MTR9.1vJ7Oq1tilmP-Z0aqxqs_MtVhl3zZFXd3YccUV6UPZY
+Content-Type: application/json
+
+{
+   "category":null
+}
+
+
+#####
 GET http://localhost:9000/api/products HTTP/1.1
 autorizado: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTQ2NTg5MTR9.1vJ7Oq1tilmP-Z0aqxqs_MtVhl3zZFXd3YccUV6UPZY
-
-
 
 
 
@@ -94,24 +102,58 @@ Content-Type: application/json
 
 {
     "product": "Hoodie",
-    "color": "Grey",
-    "price": 300,
+    "color": "Black",
+    "price": 100000,
     "size": [
         {
             "size": "S",
-            "stock": 2,
+            "stock": 2
         },
         {
             "size": "M",
-            "stock": 5,
+            "stock": 5
         },
         {
             "size": "L",
-            "stock": 1,
-        },
-    ]     
+            "stock": 1
+        }
+    ], 
+    "img": [
+        {
+           
+        }
+    ]
 }
 
+
+
+#####
+
+POST http://localhost:9000/api/products HTTP/1.1
+Content-Type: application/json
+
+{
+        "product": "Hoodie",
+        "color": "Chocolate",
+        "price": 100000,
+        "size": [
+            {
+                "size": "S",
+                "stock": 3,
+            },
+            {
+                "size": "M",
+                "stock": 6,
+            },
+            {
+                "size": "L",
+                "stock": 1,
+            },
+        ],
+        "img": [ 
+            "https://previews.dropbox.com/p/thumb/ACCCzXxvF5jIIdnIegu1zJK-SiUlBcjuMkZ5j3GfQ-Ot8jfHVh6uZPDseGaXsAmtE2Ds8RUWOcowfmknKFhKwQFIjRtwcGDF2LDEh5KJhm5kZ6ayzDHHQfmusrCPjt4YT4FDftoYMp162a898V9uQMzRtqJpZlFkOHgQCczmO5-g38X_kkODXcXkx2Z64QNcG3b3cHsEMcUx7dIU1GBXtJRdJhiNSfXki1whMnYTI17Jv4DpAghhLAWobW4xKMhjP1GpJNrGmi_X9G8o2IZ2cKlJ6g4inGQyEj8W3vm755fS3ucQFC5YUPIUt8UldYXxqXWR7sYHuxYKYQ_fzDO4OCm0/p.jpeg",
+            "https://previews.dropbox.com/p/thumb/ACDlA2GV44hymojUOAVR4XJlQjtXFtQmdzdBFXuaES8x4iCW8eqzNPmkQaRMQdrm3H_6VsOFZIkM8gsum4Q9XpZyT1O61V9HniVUItR2hc7ovM3dNlT78XTOm88GOwo2gcnanulUZk_mJmu42fukACB9BN5dF7yZNxf0Q2-yCGrxD9_W11dlnLvjOvdud1wgwZegVdKiayhUSAZR_VSm8xkk7jFqc0M9beT5NLdfYshyhSk2Fcxf8OD-3DvRxPgrNw-RIQymE0DpaIleavIScI9wDhOUmqAyAdogFSidvKg-iWPB6KyFvdI5BvMzEWtkf8oYPHTblePBCUksAK4OD9qq/p.jpeg"]
+    },
 
 
 
@@ -123,59 +165,62 @@ Content-Type: application/json
     {
         "product": "Hoodie",
         "color": "Black",
-        "price": 30.0,
+        "price": 100000,
         "size": [
             {
                 "size": "S",
-                "stock": 3,
+                "stock": 3
             },
             {
                 "size": "M",
-                "stock": 6,
+                "stock": 6
             },
             {
                 "size": "L",
-                "stock": 1,
+                "stock": 1
             },
-        ]
+        ],
+        "img": [] ,
     },
     {
         "product": "Hoodie",
-        "color": "Baby Blue",
-        "price": 30.0,
+        "color": "Lime",
+        "price": 100000,
         "size": [
             {
                 "size": "S",
-                "stock": 3,
+                "stock": 10
             },
             {
                 "size": "M",
-                "stock": 6,
+                "stock": 5
             },
             {
                 "size": "L",
-                "stock": 1,
+                "stock": 2
             },
-        ]
+        ],
+        "img": []
     },
     {
         "product": "Hoodie",
-        "color": "Red",
-        "price": 30.0,
+        "color": "Violety",
+        "price": 100000,
         "size": [
             {
                 "size": "S",
-                "stock": 3,
+                "stock": 4
             },
             {
                 "size": "M",
-                "stock": 6,
+                "stock": 9
             },
             {
                 "size": "L",
-                "stock": 1,
+                "stock": 7
             },
-        ]
+        ],
+        "img": []
     },
   
 ]
@@ -192,15 +237,15 @@ Content-Type: application/json
         "size": [
             {
                 "size": "S",
-                "stock": 2,
+                "stock": 2
             },
             {
                 "size": "M",
-                "stock": 5,
+                "stock": 5
             },
             {
                 "size": "L",
-                "stock": 1,
+                "stock": 1
             },
         ]
         

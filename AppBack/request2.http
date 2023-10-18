@@ -1,0 +1,29 @@
+#####
+
+POST http://localhost:9000/api/products HTTP/1.1
+Content-Type: application/json
+
+{
+  "categories": 1,
+  "product": "Hoodie",
+  "color": "Chocolate",
+  "price": 100000,
+  "size": [
+    {
+      "size": "S",
+      "stock": 2
+    },
+    {
+      "size": "M",
+      "stock": 5
+    },
+    {
+      "size": "L",
+      "stock": 1
+    }
+  ],
+  "img": [
+    "https://www.gef.co/dx/api/dam/custom/2021/GEF/ES-CO/Imagenes/Ninos/CAMISETAS/Lopis_Kd/566x715/Camiseta-Nino-Lopis-Kd-Negro-799-Frente-Gef.jpg",
+    "https://i.pinimg.com/1200x/f9/67/3a/f9673ad34e4d9c4ca9e94bb069b90494.jpg"
+  ]
+}

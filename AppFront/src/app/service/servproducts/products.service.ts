@@ -1,26 +1,26 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable, firstValueFrom, lastValueFrom } from 'rxjs';
-import { Product } from 'src/app/interfaces/product.interfaces';
+import { firstValueFrom } from 'rxjs';
+import { Observable } from 'rxjs';
+import { Order } from 'src/app/interfaces/order.interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class ProductsService {
+
+  productUrl = 'http://localhost:9000/api/products';
+  createOrderUrl = 'http://localhost:9000/api/create-order';
 
   httpClient = inject(HttpClient);
-  baseUrl = 'http://localhost:9000/api/products';
-  userUrl = 'http://localhost:9000/api';
 
-  getAllProducts(): Observable<Product[]> {
-    const response = this.httpClient.get<Product[]>('${this.baseUrl}products')
-    console.log  
-    return response
+  async traerTodo(category: number|null) {
+    const result = await this.httpClient.post<any[]>(this.productUrl, {category:category}) as Observable<any[]>
+    return firstValueFrom(result);
   }
 
-  // getPromise(): Promise<any[]> {
-  // return lastValueFrom(this.httpClient.get<any[]>('${this.baseUrl}products'))
- // }
-
-  // constructor() { }
+  async createOrder(order:Order) {
+    const result = await this.httpClient.post<any[]>(this.createOrderUrl, order) as Observable<any[]>
+    return firstValueFrom(result);
+  }
 }

@@ -1,6 +1,9 @@
 <section class="todo">
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
+      <li class="logo">
+        <a class="navbar-brand" href="#">Ropa Pa'Toos</a>
+      </li>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -13,13 +16,17 @@
           <li class="nav-item">
             <a [routerLink]="['/footer']" class="nav-link active" (click)="footer()">About us</a>
           </li>
-          <li class="logo">
-            <a class="navbar-brand" href="#">Ropa Pa'Toos</a>
-          </li>
         </ul>
-        <div class="log">
-          <a [routerLink]="['/login']" class="nav-link active logi">Log In</a>
+        <div *ngIf="userIsLoggedIn; else logInBottom"> 
+          <div class="log">
+            <a class="nav-link active logi" (click)="onToggleCart()">Cart</a>
+          </div>
         </div>
+        <ng-template #logInBottom>
+          <div class="log">
+            <a [routerLink]="['/login']" class="nav-link active logi">Log In</a>
+          </div>
+        </ng-template>
       </div>
     </div>
   </nav>

@@ -1,162 +1,113 @@
-/*{
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
+h1{
+  color: #ff5e14;
+  text-align: center;
+}
+h2{
+  color: white;
+  text-align: center;
+  font-size: medium;
 }
 
-.todo{
-  background-color: #000;
-}
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  background-color: black;
-}
-
-.product-card {
-  width: 300px;
-  border-radius: 10px;
-  -webkit-box-shadow:  0px 0px 47px -20px rgba(0,0,0,1);
-  -moz-box-shadow:  0px 0px 47px -20px rgba(0,0,0,1);
-  box-shadow:  0px 0px 47px -20px rgba(0,0,0,1);
-  margin: 60px 0px 60px 0px;
-  background-color: #fff;
-}
-
-.product-image {
-  height: 300px;
-  overflow: hidden;
-  position: relative;
-  top:-90px;
+.general{
   padding: 10px;
 }
 
-.product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s;
-  border-radius: 10px;
+.categories{
+    display: flex;
+    align-content: center;
+    padding: 10px;
+    justify-content: space-around;
+
 }
 
-.product-image:hover img {
-  transform: scale(1.1);
+.seccion{
+  padding: 10px;
+
 }
 
-.product-details {
-  padding: 20px;
-  margin-top:-90px;
+
+
+@media (max-width: 768px) {
+    .categories {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 7%;
+      
+      /* Establece el flujo de columna */
+  
+  
+    }
+
+    .mid {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 7%;
+      
+    }
 }
 
-.product-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+@media (min-width: 768px){
+  img{
+    max-width: 340px;
+  }
+  
 }
 
-.product-price {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
 
-.product-description {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 10px;
-  color: #666;
-}
-
-.product-details.expand {
-  height: auto;
-}
-
-.product-details .expand-button {
-  cursor: pointer;
-  font-size: 1rem;
-  color: #666;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.product-details .expand-button:hover {
-  color: #000;
-  text-decoration: underline;
-}
-.buttons {
+.products{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.add-to-cart,
-.compare {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.add-to-cart {
-  background-color: #666;
-}
-
-.compare {
-  background-color: #CAC531;
-  color:#fff;
-}
-
-.add-to-cart:hover,
-.compare:hover {
-  opacity: 0.8;
-}
-
-.credit a {
-  text-decoration: none;
-  color: #000;
-  font-weight: 800;
-}
-
-.credit {
-    color: #000;
-  text-align: center;
-  margin-top: 10px;
-  font-family: Verdana,Geneva,Tahoma,sans-serif;
-}
-*/
-.item {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  border: 1px solid #ccc;
-  perspective: 1000px; 
-}
-.card {
-  position: absolute;
+  flex-wrap: wrap;
   width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-}
-.item:hover .card {
-  transform: rotateY(180deg);
-}
-.img {
-  max-width: 100%;
-}
-.front, .back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 5rem;
+  align-items: center;
+  margin: 50px, 0;
+
+}
+
+
+.card{
+  color: black;
+  justify-content: space-between;
+
+}
+
+.card-body{
+  background-color: black;
+  color: white;
+}
+
+.tallas{
+  justify-content: center;
+}
+
+
+
+-------------------------------
+.container {
+  padding: 2rem 0rem;
+}
+
+.table-image thead td, .table-image thead th {
+  border: 0;
+  color: #666;
+  font-size: 0.8rem;
+}
+.table-image td, .table-image th {
+  vertical-align: middle;
+  text-align: center;
+}
+.table-image td.qty, .table-image th.qty {
+  max-width: 2rem;
+}
+
+.price {
+  margin-left: 1rem;
+}
+
+.modal-footer {
+  padding-top: 0rem;
 }

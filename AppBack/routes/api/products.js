@@ -3,15 +3,23 @@ import productsSchema from "../../models/products.model.js"
 
 
 const router = express.Router()
-
-//traer todos
-
-router.get ('/products', (require, response) => {
-    productsSchema
+ 
+//categorias
+router.post('/products', (require, response) => {
+    const {category} = require.body;
+    if (category !== null){
+        productsSchema
+        .find({categories:category})
+        .then((data) => response.json(data))
+        .catch((error) => response.json({ message: error }))
+    }else{
+        productsSchema
         .find()
         .then((data) => response.json(data))
         .catch((error) => response.json({ message: error }))
 
+    }
+    
 });
 
 
@@ -64,7 +72,7 @@ router.delete('/products/:id',(require, response) =>{
     .catch((error)=> response.json({ message: error }))
 });
 
-
+/////////////////////////////////////
 
 
 export default router;

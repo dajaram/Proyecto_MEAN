@@ -6,7 +6,7 @@ import productsRoutes from "./products.js"
 const router = express.Router();
 
 router.use('', usersRoutes);
-router.use('', checkToken, productsRoutes);
+router.use('',  productsRoutes);
 
 
 
