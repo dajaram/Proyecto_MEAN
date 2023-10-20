@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { SharedService } from 'src/app/service/shared.service';
+import { UsersService } from 'src/app/service/users.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +13,8 @@ import { SharedService } from 'src/app/service/shared.service';
 export class NavbarComponent {
   userIsLoggedIn: boolean = false;
   subscription: any
+  router = inject(Router);
+  userService = inject(UsersService);
 
 
   constructor(private sharedService: SharedService) { }
@@ -35,5 +39,10 @@ export class NavbarComponent {
 
   onToggleCart() {
     this.subscription = this.sharedService.getCartStatus().pipe(take(1)).subscribe()
+  }
+
+  onClickLogout () {
+    localStorage.removeItem('user_token');
+    this.router.navigate(['/home']);
   }
 }

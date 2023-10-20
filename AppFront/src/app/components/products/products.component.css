@@ -62,16 +62,17 @@ h2{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin: 50px, 0;
+  font-family: aldo;
 
 }
 
 
 .card{
   color: black;
-  justify-content: space-between;
+  justify-content: space-around;
 
 }
 
@@ -80,11 +81,10 @@ h2{
   color: white;
 }
 
-.tallas{
-  justify-content: center;
+.cat{
+  font-family: spider;
+  font-size: 50px;
 }
-
-
 
 -------------------------------
 .container {
@@ -110,4 +110,82 @@ h2{
 
 .modal-footer {
   padding-top: 0rem;
+}
+
+.text1{
+  font-family: aldo;
+  font-size: 25px;
+  color: #e8ceb9;
+}
+
+.card-body{
+  color: #e8ceb9;
+}
+
+.btn.btn-outline{
+  border-color: #e8ceb9;
+  color: #e8ceb9;
+  width: 35px;
+  height: 35px;
+  margin: 10px;
+}
+.btn.btn-outline:hover{
+  background-color: #e8ceb933;
+}
+.all-size{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+
+}
+
+.btn{
+  border-color: #e8ceb9;
+  color: #e8ceb9;
+  font-family: aldo;
+}
+
+.btn:hover{
+  background-color: #e8ceb933;
+}
+
+.card-text{
+  font-size: 15px;
+}
+
+.fw-bold.mb-0{
+  font-family: spider;
+  font-size: 30px;
+}
+
+.textinfo{
+  font-size: 20px;
+}
+
+.col-md-3.col-lg-3.col-xl-3{
+  font-family: aldo;
+  text-align: center;
+}
+
+.mb-0{
+  font-family: aldo;
+  font-size: 20px;
+}
+
+#total{
+  font-family: spider;
+  font-size: 25px;
+}
+
+#producto{
+  font-family: aldo;
+}
+
+.text-uppercase{
+  font-family: aldo;
+}
+
+.precio{
+  font-family: aldo;
+  font-size: 25px;
 }

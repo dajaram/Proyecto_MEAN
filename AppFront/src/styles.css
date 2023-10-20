@@ -1,20 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Amatic+SC:wght@700&family=DM+Sans:opsz,wght@9..40,200&family=DM+Serif+Display&family=Montserrat:wght@300&family=Playfair+Display:wght@500;600&family=UnifrakturCook:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Amatic+SC:wght@700&family=DM+Sans:opsz,wght@9..40,200&family=DM+Serif+Display&family=Montserrat:wght@300&family=Playfair+Display:wght@500;600&family=Sedgwick+Ave+Display&family=UnifrakturCook:wght@700&display=swap');
 @font-face {
-    font-family: loster;
-    src: url('./assets/fonts/Lostar.ttf');
+    font-family: 'spider';
+    src: url('./assets/fonts/The\ Amazing\ Spider-Man.ttf');
 }
 @font-face {
-  font-family: roun;
-  src: url('./assets/fonts/Rounded_Elegance.ttf');
-}
-@font-face {
-  font-family: gecko;
-  src: url('./assets/fonts/Gecko\ Lunch.ttf');
-}
-@font-face {
-font-family: geo;
-src: url('./assets/fonts/GeosansLight.ttf');
+    font-family: 'aldo';
+    src: url('./assets/fonts//Aldo\ PC.ttf');
 }
 
 

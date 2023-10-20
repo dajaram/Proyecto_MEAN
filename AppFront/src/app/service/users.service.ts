@@ -35,5 +35,8 @@ export class UsersService {
     )
   }
 
+  isLogged():boolean{
+    return localStorage.getItem('user_token')? true : false;
+  }
   // constructor() { }
 }

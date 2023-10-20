@@ -1,4 +1,69 @@
-<div *ngIf="openCart; else closeCart">
+<div *ngIf="!openCart; else closeCart">
+
+  <h1 class="cat"> CATEGORIES </h1>
+  <section class="general">
+    <div class="categories">
+      <div class="mid">
+        <h2 class="text1"> Hoodies </h2>
+        <img src="../../../assets/img/categories/hoodie pato.jpg" (click)="changeFilter(1)">
+      </div>
+      <div class="mid">
+        <h2 class="text1"> Pants </h2>
+        <img src="../../../assets/img/categories/pants cat.jpg" (click)="changeFilter(2)">
+      </div>
+      <div class="mid">
+        <h2 class="text1"> Shorts </h2>
+        <img src="../../../assets/img/categories/short  cate.jpg" (click)="changeFilter(3)">
+      </div>
+      <div class="mid">
+        <h2 class="text1"> T-Shirts </h2>
+        <img src="../../../assets/img/categories/t-shirt cat.jpg" (click)="changeFilter(0)">
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <div *ngFor="let product of arrProducts; let i = index">
+      <div class="card" style="width: 18rem;">
+        <div [id]="'carouselExampleFade-' + i" class="carousel slide carousel-fade">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img [src]="product.img[0]" class="card-img-top" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img [src]="product.img[1]" class="card-img-top" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleFade-' + i"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselExampleFade-' + i"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{product.product}}</h5>
+          <p class="card-text1">{{product.color}}</p>
+          <div class="all-size">
+            <div *ngFor="let size of product.size" class="tallas">
+              <button type="button" class="btn btn-outline" (click)="addSelectedSize(size.size, product._id)">{{size.size}}</button>
+            </div>
+          </div>
+          <p class="card-text">Price: {{product.price}}</p>
+          <a class="btn" (click)="addProductToCart(product)">Add Cart</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<ng-template #closeCart>
+
   <section class="h-100 h-custom" style="background-color: black;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -9,135 +74,55 @@
                 <div class="col-lg-8">
                   <div class="p-5">
                     <div class="d-flex justify-content-between align-items-center mb-5">
-                      <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                      <h6 class="mb-0 text-muted">3 items</h6>
+                      <h1 class="fw-bold mb-0">Shopping Cart</h1>
                     </div>
                     <hr class="my-4">
 
-                    <div class="row mb-4 d-flex justify-content-between align-items-center">
-                      <div class="col-md-2 col-lg-2 col-xl-2">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp"
-                          class="img-fluid rounded-3" alt="Cotton T-shirt">
-                      </div>
-                      <div class="col-md-3 col-lg-3 col-xl-3">
-                        <h6 class="text-muted">Shirt</h6>
-                        <h6 class="text-black mb-0">Cotton T-shirt</h6>
-                      </div>
-                      <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                        <button class="btn btn-link px-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                          <i class="fas fa-minus"></i>
-                        </button>
+                    <div *ngFor="let item of cartList ">
+                      <div class="row mb-4 d-flex justify-content-between align-items-center">
+                        <div class="col-md-2 col-lg-2 col-xl-2">
+                          <img src={{item.img[0]}} class="card-img" alt="">
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-3">
+                          <h6 class="textinfo">{{item.product}}</h6>
+                          <h6 class="text">{{item.color}}</h6>
+                          <h6 class="text">{{item.size}}</h6>
 
-                        <input id="form1" min="0" name="quantity" value="1" type="number"
-                          class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                          <h5></h5>
+                          <h6 class="mb-0">Price: {{item.price}}</h6>
+                        </div>
+                        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                          <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
+                        </div>
+                      </div>
 
-                        <button class="btn btn-link px-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </div>
-                      <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                        <h6 class="mb-0">€ 44.00</h6>
-                      </div>
-                      <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                        <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
-                      </div>
-                    </div>
-
-                    <hr class="my-4">
-
-                    <div class="row mb-4 d-flex justify-content-between align-items-center">
-                      <div class="col-md-2 col-lg-2 col-xl-2">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img6.webp"
-                          class="img-fluid rounded-3" alt="Cotton T-shirt">
-                      </div>
-                      <div class="col-md-3 col-lg-3 col-xl-3">
-                        <h6 class="text-muted">Shirt</h6>
-                        <h6 class="text-black mb-0">Cotton T-shirt</h6>
-                      </div>
-                      <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                        <button class="btn btn-link px-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                          <i class="fas fa-minus"></i>
-                        </button>
-
-                        <input id="form1" min="0" name="quantity" value="1" type="number"
-                          class="form-control form-control-sm" />
-
-                        <button class="btn btn-link px-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </div>
-                      <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                        <h6 class="mb-0">€ 44.00</h6>
-                      </div>
-                      <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                        <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
-                      </div>
-                    </div>
-
-                    <hr class="my-4">
-
-                    <div class="row mb-4 d-flex justify-content-between align-items-center">
-                      <div class="col-md-2 col-lg-2 col-xl-2">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img7.webp"
-                          class="img-fluid rounded-3" alt="Cotton T-shirt">
-                      </div>
-                      <div class="col-md-3 col-lg-3 col-xl-3">
-                        <h6 class="text-muted">Shirt</h6>
-                        <h6 class="text-black mb-0">Cotton T-shirt</h6>
-                      </div>
-                      <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                        <button class="btn btn-link px-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                          <i class="fas fa-minus"></i>
-                        </button>
-
-                        <input id="form1" min="0" name="quantity" value="1" type="number"
-                          class="form-control form-control-sm" />
-
-                        <button class="btn btn-link px-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </div>
-                      <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                        <h6 class="mb-0">€ 44.00</h6>
-                      </div>
-                      <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                        <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
-                      </div>
-                    </div>
-
-                    <hr class="my-4">
-
-                    <div class="pt-5">
-                      <h6 class="mb-0"><a href="#!" class="text-body"><i
-                            class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+                      <hr class="my-4">
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 bg-grey">
+                <div class="col-lg-4">
                   <div class="p-5">
-                    <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
+                    <h3 class="fw-bold mb-5 mt-2 pt-1" id="total">Summary</h3>
                     <hr class="my-4">
-
-                    <div class="d-flex justify-content-between mb-4">
-                      <h5 class="text-uppercase">items 3</h5>
-                      <h5>€ 132.00</h5>
+                    <div *ngFor="let item of cartList">
+                      <div class="d-flex justify-content-between mb-4" id="producto">
+                        <h5 class="">{{item.product}}</h5>
+                        <h6>{{item.color}}</h6>
+                        <h5>{{item.price}}</h5>
+                      </div>
                     </div>
 
                     <hr class="my-4">
 
                     <div class="d-flex justify-content-between mb-5">
-                      <h5 class="text-uppercase">Total price</h5>
-                      <h5>€ 137.00</h5>
+                      <h5 class="text-uppercase">Total</h5>
+                      <h5 class="precio">{{totalCost}}</h5>
                     </div>
 
-                    <button type="button" class="btn btn-dark btn-block btn-lg"
-                      data-mdb-ripple-color="dark">Register</button>
+                    <button type="button" class="btn" data-mdb-ripple-color="dark"
+                      (click)="createOrder()">Buy</button>
 
                   </div>
                 </div>
@@ -148,68 +133,4 @@
       </div>
     </div>
   </section>
-</div>
-<ng-template #closeCart>
-
-  <h1> CATEGORIES </h1>
-
-<section class="general">
-  <div class="categories">
-    <div class="mid">
-      <h2> Hoodies </h2>
-      <img src="../../../assets/img/categories/hoodie pato.jpg" (click)="changeFilter(1)">
-    </div>
-    <div class="mid">
-      <h2> Pants </h2>
-      <img src="../../../assets/img/categories/pants cat.jpg" (click)="changeFilter(2)">
-    </div>
-    <div class="mid">
-      <h2> Shorts </h2>
-      <img src="../../../assets/img/categories/short  cate.jpg" (click)="changeFilter(3)">
-    </div>
-    <div class="mid">
-      <h2> T-Shirts </h2>
-      <img src="../../../assets/img/categories/t-shirt cat.jpg" (click)="changeFilter(0)">
-    </div>
-  </div>
-</section>
-
-
-  <body>
-    <section class="products">
-      <div *ngFor="let product of arrProducts">
-        <div class="card" style="width: 18rem;">
-          <div id="carouselExampleFade" class="carousel slide carousel-fade">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src={{product.img[0]}} class="card-img-top" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src={{product.img[1]}} class="card-img-top" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-              data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
-              data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">{{product.product}}</h5>
-            <p class="card-text">{{product.color}}</p>
-            <div *ngFor="let size of product.size" class="tallas">
-              <button type="button" class="btn btn-outline-dark">{{size.size}}</button>
-            </div>
-            <p class="card-text">Price: {{product.price}}</p>
-            <a href="#" class="btn btn-primary">Add Cart</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </body>
 </ng-template>

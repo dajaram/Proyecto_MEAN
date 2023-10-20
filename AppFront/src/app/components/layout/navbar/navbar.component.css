@@ -1,5 +1,4 @@
 .container-fluid{
-    font-family: lostar;
     font-size: larger;
     background-color: black;
     margin: 0%;
@@ -14,7 +13,7 @@
 .navbar-brand{
     font-size: xx-large;
     color: #ff4b0f;
-    font-family: lostar;
+    font-family: spider;
 
 }
 
@@ -36,12 +35,25 @@ nav menu{
     margin-right: 10px;
 }
 
-.icon-cart {
-    width: 40px;
-    height: 40px;
-    color: white;
-}
-
 .nav-item {
     text-align: left;
+}
+
+.cart{
+    cursor: pointer;
+
+}
+
+.collapse.navbar-collapse{
+    font-family: aldo;
+}
+
+.logout{
+    font-family: aldo;
+    margin-right: 10px;
+}
+
+.log{
+    font-family: aldo;
+    margin-left: 10px;
 }

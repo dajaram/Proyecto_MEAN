@@ -38,9 +38,18 @@
 
 .info {
 	background-color: black;
-	font-family: lostar;
+	font-family: spider;
 	color: #e8ceb9;
 	text-align: center;
 	margin: 0%;
 	padding-top: 5%;
+}
+
+.texto{
+	font-family: aldo;
+	color: #e8ceb9;
+	text-align: center;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	font-size: 25px;
 }

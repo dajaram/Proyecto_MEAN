@@ -1,5 +1,4 @@
 export interface Order {
-    id: string;
     userId: string;
     productsId: Array<{
         productId:string;
@@ -8,3 +7,18 @@ export interface Order {
     total: number;
 }
 
+export interface SelectedSize{
+    size: string;
+    productId: string;
+}
+
+export interface ProductAdded{
+    _id: string;
+    product: string;
+    color: string;
+    price: number;
+    size: string;
+    categories: number;
+    img: Array<string>;
+
+}

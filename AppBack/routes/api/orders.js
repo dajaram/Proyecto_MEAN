@@ -11,3 +11,5 @@ router.post('/create-order',(require, response) => {
     .then((data) => response.json(data))
     .catch((error)=>response.json({ message: error}))
 });
+
+export default router;

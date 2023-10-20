@@ -14,19 +14,21 @@
             <a [routerLink]="['/home']" class="nav-link active">Home</a>
           </li>
           <li class="nav-item">
-            <a [routerLink]="['/footer']" class="nav-link active" (click)="footer()">About us</a>
+            <a [routerLink]="['/products']" class="nav-link active">Products</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/footer']" class="nav-link active" (click)="footer()">Vision</a>
           </li>
         </ul>
-        <div *ngIf="userIsLoggedIn; else logInBottom"> 
-          <div class="log">
-            <a class="nav-link active logi" (click)="onToggleCart()">Cart</a>
-          </div>
+        <div class="cart">
+          <a *ngIf="userService.isLogged()" class="nav-link active logi" (click)="onToggleCart()">Cart</a>
         </div>
-        <ng-template #logInBottom>
-          <div class="log">
-            <a [routerLink]="['/login']" class="nav-link active logi">Log In</a>
-          </div>
-        </ng-template>
+      </div>
+      <div class="logout">
+        <a class="nav-link active" href="" *ngIf="userService.isLogged()" (click)="onClickLogout()">Log Out</a>
+      </div>
+      <div class="log">
+        <a [routerLink]="['/login']" *ngIf="!userService.isLogged()" class="nav-link active logi">Log In</a>
       </div>
     </div>
   </nav>
