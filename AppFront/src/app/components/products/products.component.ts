@@ -84,4 +84,8 @@ export class ProductsComponent {
       size: size, productId: productId
     }
   }
+
+    showAlert(): void {
+      alert('Order created succesfully');
+  }
 }
